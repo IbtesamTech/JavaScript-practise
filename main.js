@@ -51,3 +51,40 @@ function allLongestStrings(inputArray) {
 
   console.log(resArray);
 }
+
+
+function commonCharacterCount(s1, s2) {
+  var count = 0;
+  s1 = s1.split("");
+  s2 = s2.split("");
+
+  s1.forEach((e) => {
+    if (s2.includes(e)) {
+      count++;
+      s2.splice(s2.indexOf(e), 1);
+    }
+  });
+
+  alert(count);
+}
+
+function isLucky(input) {
+  let arr = input.toString().split("");
+  let length = parseInt(arr.length / 2);
+  let first = 0;
+  let second = 0;
+  debugger;
+  for (let loop = 0; loop < arr.length; loop++) {
+    if (loop < length) {
+      first = first + parseInt(arr[loop]);
+    } else {
+      second = second + parseInt(arr[loop]);
+    }
+  }
+
+  if (first == second) {
+    alert(true);
+  } else {
+    alert(false);
+  }
+}
